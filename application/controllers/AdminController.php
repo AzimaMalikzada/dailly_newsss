@@ -11,7 +11,11 @@ class AdminController extends CI_Controller{
         $this->load->view('admin/index');
     }
 
-    public function new_list(){
+    public function news_list(){
         $this->load->view('admin/news/list');
+    }
+
+    public function news_create(){
+        $this->load->view('admin/news/create');
     }
 }

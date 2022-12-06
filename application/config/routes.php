@@ -59,6 +59,8 @@ $route['single'] = 'UserController/single';
 $route['a_login'] = 'AdminController/index';
 $route['a_dashboard'] = 'AdminController/dashboard';
 $route['a_news_list'] = 'AdminController/news_list';
+$route['a_news_create'] = 'AdminController/news_create';
+
 
 
 
