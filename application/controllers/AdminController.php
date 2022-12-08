@@ -37,7 +37,7 @@ class AdminController extends CI_Controller{
             'n_create_date'     => date("Y-m-d H:i:s"),
       ];
 
-
+// new
       $this->db->insert('news', $data);
       redirect(base_url('a_news_list'));
        }else{
@@ -45,3 +45,4 @@ class AdminController extends CI_Controller{
        }
     }
 }
+// salam
