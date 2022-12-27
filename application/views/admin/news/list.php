@@ -2,7 +2,6 @@
 <?php $this->load->view('admin/includes/leftMenu'); ?>
 <?php $this->load->view('admin/includes/navbar'); ?>
 
-
 <div class="content-wrapper">
    <div class="container-xxl flex-grow-1 container-p-y">
        <div class="row">
@@ -35,18 +34,32 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                            <td>1</td>
-                          <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>React Project</strong></td>
-                          <td>Lorem iPSUM DOLOR</td>
-                          <td>Sport</td>
+                        <?php foreach($get_all as $items){ ?>
+
+
+                          <tr>
+                          <td><?php echo $items->n_id; ?></td>
+                          <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong><?php echo $items->n_title; ?></strong></td>
+                          <td><?php echo $items->n_description; ?></td>
+                          <td><?php echo $items->n_category; ?></td>
                           <td>
-                            06.12.2022
+                          <?php echo date("d-m-Y   H:i", strtotime($items->n_date)) ; ?>
                           </td>
                           <td>
-                            <img width="100px" src="https://www.americanhumane.org/app/uploads/2021/03/Panda2.png" alt="">
+                             
+                            <img width="100px" src="<?php echo base_url('uploads/news/'.$items->n_file); ?>" alt="">
                           </td>
-                          <td><span class="badge bg-label-success me-1">Active</span></td>
+
+                          <td>
+                            <?php if($items->n_status == "Active"){ ?>
+                               <span class="badge bg-label-success me-1"><?php echo $items->n_status; ?></span>
+                            <?php }else if($items->n_status == "Deactive"){ ?>
+                              <span class="badge bg-label-danger me-1"><?php echo $items->n_status; ?></span>
+                            <?php }else{ ?>
+                              <span class="badge bg-label-success me-1">UPSS</span>
+                            <?php } ?>
+                          </td>
+
                           <td>
                             <a href="">
                             <button
@@ -69,6 +82,8 @@
                         
                           </td>
                         </tr>
+                        <?php } ?>
+                        
                       </tbody>
                     </table>
                   </div>
