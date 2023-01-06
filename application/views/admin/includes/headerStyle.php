@@ -64,6 +64,30 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="<?php echo base_url("public/admin/"); ?>assets/js/config.js"></script>
   </head>
+  <style>
+    /* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(105, 108, 255, 0.16) !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(105, 108, 255);
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(105, 108, 255, 0.5) !important;
+}
+
+  </style>
 </body>
 
 

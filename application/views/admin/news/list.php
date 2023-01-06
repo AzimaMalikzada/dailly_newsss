@@ -34,7 +34,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach($get_all as $items){ ?>
+                        <?php foreach ($get_all as $items) { ?>
 
 
                           <tr>
@@ -61,24 +61,17 @@
                           </td>
 
                           <td>
-                            <a href="">
-                            <button
-                                type="button"
-                                class="btn btn-warning btn-sm"
-                                data-bs-toggle="dropdown"
-                              >
-                              <i class="bx bx-edit-alt me-1"></i> Edit
+                            <a href="<?php echo base_url('a_news_update/'.$items->n_id); ?>">
+                              <button type="button" class="btn btn-warning btn-sm">
+                                <i class="bx bx-edit-alt"></i>
                               </button>
                             </a>
-                              <a href="">
-                              <button
-                                type="button"
-                                class="btn btn-danger btn-sm"
-                                data-bs-toggle="dropdown"
-                              >
-                              <i class="bx bx-trash me-1"></i> Delete
+
+                            <a onclick="return confirm('Are you sure want to delete this news?')" href="<?php echo base_url('a_news_delete/'.$items->n_id); ?>">
+                              <button type="button" class="btn btn-danger btn-sm">
+                                <i class="bx bx-trash "></i>
                               </button>
-                              </a>
+                            </a>
                         
                           </td>
                         </tr>
